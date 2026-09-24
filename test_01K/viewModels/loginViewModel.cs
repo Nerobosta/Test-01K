@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UserRoles.ViewModels;
+namespace test_01K.viewModels;
 
 public class LoginViewModel
 {

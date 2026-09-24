@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using test_01K.Models;
@@ -11,7 +12,18 @@ namespace test_01K.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult Admin()
+        {
+            return View();
+        }
+        [Authorize(Roles = "User")]
+        public IActionResult User()
         {
             return View();
         }

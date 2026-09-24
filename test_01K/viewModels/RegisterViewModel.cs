@@ -1,25 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UserRoles.ViewModels
+namespace test_01K.viewModels
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Name required")]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [Display(Name = "Full Name")]
+        public string Name { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Email required")]
+        [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Password required")]
-        [StringLength(40, MinimumLength = 8, ErrorMessage = "The {0} must be at {2} and at max {1} characters long.")]
+        [Required]
         [DataType(DataType.Password)]
-        [Compare("ConfirmPassword", ErrorMessage = "Password doesn't match")]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Confirm password required")]
+        [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        public string ConfirmPassword { get; set; }
+        [Compare("Password", ErrorMessage = "Las contraseñas no coinciden.")]
+        public string ConfirmPassword { get; set; } = string.Empty;
     }
 }

@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace test_01K.Models;
-
-public class User : IdentityUser
+namespace test_01K.Models
 {
-    public string FullName { get; set; }
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
-    public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    public class User : IdentityUser
+    {
+        public string FullName { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    }
 }
